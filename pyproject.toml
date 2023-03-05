@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "accountmanager"
+version = "2.0.0"
+description = "A script for logging TDA account info."
+authors = ["Tyler Patterson <pattertj@duck.com>"]
+readme = "readme.md"
+packages = [
+  {include = "accountmanager"}
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<=3.11"
+tda-api = "^1.6.0"
+typer = {extras = ["all"], version = "^0.7.0"}
+rich = "^12.6.0"
+chromedriver-autoinstaller = "^0.4.0"
+keyring = "^23.11.0"
+pytz = "^2022.6"
+httpx = "^0.23.0"
+selenium = "^4.6.0"
+pygsheets = "^2.0.6"
+
+[tool.poetry.group.dev.dependencies]
+deptry = "^0.6.4"
+mypy = "^0.981"
+pre-commit = "^2.20.0"
+bandit = "^1.7.4"
+flake8 = "^5.0.4"
+types-pytz = "^2022.6.0.1"
+
+[tool.poetry.scripts]
+accountmanager = "accountmanager.__main__:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
